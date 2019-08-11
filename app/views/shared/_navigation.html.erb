@@ -13,6 +13,15 @@
         <li class="nav-item<%= ' active' if controller.controller_name == 'pictures' and controller.action_name == 'new' %>">
           <a class="nav-link" href="<%= new_picture_path %>">Upload</a>
         </li>
+        <% if session[:access_token].nil? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= oauth_request_path %>">Connect to MyTweetApp</a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <span class="nav-link text-success">Connected to MyTweetApp</span>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= logout_path %>">Logout</a>
         </li>

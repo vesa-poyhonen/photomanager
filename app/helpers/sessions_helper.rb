@@ -20,6 +20,7 @@ module SessionsHelper
 
   def logout
     session.delete(:user_id)
+    session.delete(:access_token)
     @current_user = nil
   end
 end

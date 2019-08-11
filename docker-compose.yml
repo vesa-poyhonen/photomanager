@@ -19,6 +19,9 @@ services:
       APP_DB: application
       APP_DB_USER: username
       APP_DB_PASSWORD: password
+      OAUTH_CLIENT_ID: e86ba3307d32b3e5753992305fce9e947e11de450dbe72ff10e267b231991b21
+      OAUTH_CLIENT_SECRET: 5daf1be0fa6d50d4faa3ffe76faa934622e665e6ca4130d30fd13361a50d0128
+      OAUTH_SITE: https://arcane-ravine-29792.herokuapp.com
       RAILS_ENV: development
     ports:
       - "3000:3000"
