@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       login user
-      redirect_to edit_user_path(user)
+      redirect_to pictures_path
     else
       flash.now[:danger] = 'Please check your User ID and password'
       render :new

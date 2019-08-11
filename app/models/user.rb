@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :pictures
+
   before_save { self.email = email.downcase }
   validates :email, presence: true, length: {maximum: 255},
             format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i},

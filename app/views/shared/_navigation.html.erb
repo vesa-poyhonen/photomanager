@@ -7,8 +7,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if is_logged_in? && current_user %>
-        <li class="nav-item<%= ' active' if controller.controller_name == 'users' %>">
-          <a class="nav-link" href="<%= edit_user_path(current_user) %>">My Profile</a>
+        <li class="nav-item<%= ' active' if controller.controller_name == 'pictures' and controller.action_name == 'index' %>">
+          <a class="nav-link" href="<%= pictures_path %>">My pictures</a>
+        </li>
+        <li class="nav-item<%= ' active' if controller.controller_name == 'pictures' and controller.action_name == 'new' %>">
+          <a class="nav-link" href="<%= new_picture_path %>">Upload</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%= logout_path %>">Logout</a>
